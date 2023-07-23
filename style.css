@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  /* Primary Color */
+  --primary-orange: 25, 97%, 53%;
+
+  /* Neutral */
+  --neutral-white: 0, 0%, 100%;
+  --neutral-l-grey: 217, 12%, 63%;
+  --neutral-m-grey: 216, 12%, 54%;
+  --neutral-d-blue: 213, 19%, 18%;
+  --neutral-vd-blue: 216, 12%, 8%;
+}
+
+/* Generic */
+body {
+  font-family: "Overpass", sans-serif;
+  color: hsl(var(--neutral-l-grey));
+  background-color: hsl(var(--neutral-vd-blue));
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+h1, h2 {
+    color: hsl(var(--neutral-white));
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+}
+
+p {
+    line-height: 1.7;
+}
+
+.container {
+  padding: 3rem 2.2rem;
+  background-image: linear-gradient(
+    0deg,
+    hsla(var(--neutral-d-blue), 0.1) 0%,
+    hsla(var(--neutral-d-blue), 1) 100%
+  );
+  border-radius: 1.5rem;
+  width: min(450px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* rating section */
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: hsl(var(--neutral-d-blue));
+}
+
+.rating {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  
+  .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .rating label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    background-color: hsl(var(--neutral-d-blue));
+    transition: all 0.5s ease;
+  }
+  
+  .rating label:hover {
+    background-color: hsl(var(--primary-orange));
+    color: hsl(var(--neutral-white));
+  }
+
+  .rating input[type="radio"]:checked + label {
+    background-color: hsl(var(--neutral-m-grey));
+    color: hsl(var(--neutral-white));
+  }
+
+#submit {
+    text-transform: uppercase;
+    color: hsl(var(--neutral-white));
+    background-color: hsl(var(--primary-orange));
+    text-decoration: none;
+    border-radius: 3rem;
+    text-align: center;
+    padding: 0.85rem 0;
+    letter-spacing: 3px;
+    transition: all 0.5s ease;
+}
+
+#submit:hover {
+    color: hsl(var(--primary-orange));
+    background-color: hsl(var(--neutral-white));
+}
+
+
+/* Thank You Section */
+.thank-you {
+    align-items: center;
+    text-align: center;
+}
+
+.callout {
+    color: hsl(var(--primary-orange));
+    background-color: hsl(var(--neutral-d-blue));
+    border-radius: 4rem;
+    padding: 0.2rem 1.2rem;
+}
